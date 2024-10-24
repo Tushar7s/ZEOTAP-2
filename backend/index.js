@@ -1,22 +1,49 @@
+if(process.env.NODE_ENV != "production"){
+  require('dotenv').config();
+}
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const Weather = require('./schema/Weather.js'); // Import the Weather schema
 const app = express();
 const PORT = process.env.PORT || 5000;
+const session = require("express-session");
+const MongoStore = require('connect-mongo');
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+const dbUrl = process.env.ATLASDB_URL
+main().then(() =>{
+    console.log("connected");
+}).catch(err=>{
+    console.log(err);
+});
+async function main( ){
+    await mongoose.connect(dbUrl);
+}
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/weather', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+const store = MongoStore.create({
+  mongoUrl: dbUrl,
+  crypto: {
+      secret: process.env.SECRET,
+  },
+  touchAfter: 24 * 3600,
 })
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error('MongoDB connection error:', err));
+store.on("error", () => {
+  console.log("ERRON IN MONGO SESSION STORE", err);
+});
+
+app.use(session({
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: true,
+  store: store,
+  cookie: { secure: process.env.NODE_ENV === "production" }
+}));
 
 
 function capitalizeFirstLetter(string) {
