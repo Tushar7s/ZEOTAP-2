@@ -1,0 +1,61 @@
+/* WeatherCard.css */
+.background {
+    margin-top: 20px; /* Space below the header */
+    display: flex; /* Center horizontally */
+    justify-content: center; /* Center the card */
+}
+
+.container {
+    margin: 20px;
+    max-width: 400px; /* Set a maximum width for the card */
+    width: 100%; /* Full width for smaller screens */
+    padding: 40px; /* Padding inside the card */
+    border-radius: 10px; /* Rounded corners */
+    background: linear-gradient(90deg, #007BFF, #6EC6FF); /* Background color */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for the card */
+    transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+}
+
+.container:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+#card {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align text */
+}
+
+.details {
+    display: flex; /* Flex layout for temp and right section */
+    justify-content: space-between; /* Space out elements */
+    width: 100%; /* Full width */
+    margin-bottom: 20px; /* Space below details */
+}
+
+.temp {
+    font-size: 48px; /* Large font size for temperature */
+    color: #ff5722; /* Warm color for temperature */
+}
+
+.right {
+    text-align: right; /* Align text to the right */
+}
+
+#summary {
+    font-size: 18px; /* Font size for description */
+    color: #666; /* Lighter color for description */
+}
+.feels-like{
+    color: white;
+    font-size:20px;
+
+}
+.infos {
+    width: 100%; /* Full width for info section */
+    display: flex; /* Flex layout for info items */
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px; /* Space between info items */
+    font-size: 16px; /* Font size for info */
+    color: whitesmoke; /* Darker color for text */
+}

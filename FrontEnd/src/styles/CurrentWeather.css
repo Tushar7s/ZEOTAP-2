@@ -1,0 +1,14 @@
+.current-weather {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.temperature {
+    text-align: center;
+}
+
+.weather-icon img {
+    width: 100px;
+}

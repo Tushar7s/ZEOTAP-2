@@ -1,0 +1,108 @@
+/* Base styling for the header */
+.header {
+    display: flex;
+    margin: 20px;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #007BFF, #6EC6FF); /* Gradient background */
+    padding: 20px 40px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* position: sticky; */
+    top: 0;
+    /* z-index: 1000; */
+    transition: all 0.3s ease;
+  }
+  
+  /* Styling for the logo */
+  .logo h1 {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 1.5px;
+  }
+  
+  /* Styling for the search box */
+  .search-box {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-box input {
+    border: none;
+    padding: 8px 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 200px;
+  }
+  
+  .search-box button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-box button:hover {
+    background-color: #ff4f4f;
+  }
+  
+  /* Unit selector styling */
+  .unit-selector {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .unit-selector select {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 14px;
+  }
+  
+  .unit-selector label {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
+    }
+  
+    .search-box {
+      margin-top: 10px;
+      width: 100%;
+    }
+  
+    .unit-selector {
+      margin-top: 10px;
+      width: 100%;
+      justify-content: flex-start;
+    }
+  
+    .search-box input {
+      width: 100%;
+    }
+  }
+  
