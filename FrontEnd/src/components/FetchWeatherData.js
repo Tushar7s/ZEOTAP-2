@@ -62,7 +62,7 @@ const FetchWeatherData = () => {
   const sendDailySummaries = async (dailySummaries) => {
     try {
       console.log("posted");
-      await axios.post("http://localhost:5000/api/weather/daily-summary", dailySummaries);
+      await axios.post("https://weatherapp-tcck.onrender.com/api/weather/daily-summary", dailySummaries);
       console.log("Daily summaries successfully sent to the backend.");
     } catch (error) {
       console.error("Error sending daily summaries:", error.message);

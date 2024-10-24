@@ -29,7 +29,7 @@ const FetchPastData = ({ city, unit }) => {
   const getPastWeatherData = async (city) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/past-summary/${city}`
+        `https://weatherapp-tcck.onrender.com/api/past-summary/${city}`
       );
       
       // Convert the initial data based on the default unit
