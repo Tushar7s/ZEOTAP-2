@@ -23,7 +23,7 @@ const FetchWeatherData = () => {
   const fetchWeatherForCity = async (city) => {
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.api_key}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid={process.env.api_key}`
       );
       const tempCelsius = response.data.main.temp - 273.15; // Current temperature in Celsius
       const minTempCelsius = response.data.main.temp_min - 273.15; // Minimum temperature in Celsius
